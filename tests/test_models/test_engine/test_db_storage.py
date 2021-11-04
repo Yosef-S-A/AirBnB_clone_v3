@@ -66,7 +66,7 @@ test_db_storage.py'])
             self.assertTrue(len(func[1].__doc__) >= 1,
                             "{:s} method needs a docstring".format(func[0]))
 
-        
+
 @unittest.skipIf(models.storage_t != 'db', "not testing db storage")
 class TestDbStorage(unittest.TestCase):
     """Test the FileStorage class"""
@@ -100,7 +100,7 @@ class TestDbStorage(unittest.TestCase):
         self.a1 = TestDbStorage.a1
         self.a2 = TestDbStorage.a2
         self.a3 = TestDbStorage.a3
-        
+
     def test_all_returns_dict(self):
         """Test that all returns a dictionaty"""
         self.assertIs(type(models.storage.all()), dict)
@@ -125,4 +125,3 @@ class TestDbStorage(unittest.TestCase):
         temp = storage.get('Place', self.p1.id)
         expected = self.p1.id
         self.assertEqual(expected, temp.id)
-                                                                                
