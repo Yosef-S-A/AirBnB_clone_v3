@@ -10,7 +10,7 @@ import os
 from flask_cors import CORS
 
 host = os.getenv('HBNB_API_HOST', '0.0.0.0')
-port = os.getenv('HBNB_API_PORT', 5000)
+port = os.getenv('HBNB_API_PORT', 5050)
 
 app = Flask(__name__)
 
