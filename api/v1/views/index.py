@@ -16,6 +16,7 @@ hbnbObjects = {
     "users": "User"
 }
 
+
 @app_views.route('/status', methods=['GET'])
 def status():
     """
@@ -24,6 +25,7 @@ def status():
     if request.method == 'GET':
         resp = {"status": "OK"}
         return jsonify(resp)
+
 
 @app_views.route('/stats', methods=['GET'])
 def Stats():

@@ -18,6 +18,7 @@ app.register_blueprint(app_views)
 
 cors = CORS(app, resources={r"/api/v1/*": {"origins": "*"}})
 
+
 @app.teardown_appcontext
 def teardown_db(exception):
     """
@@ -26,12 +27,15 @@ def teardown_db(exception):
     """
     storage.close()
 
+
 @app.errorhandler(404)
 def not_found(error):
     """
-    a handler for 404 errors that returns a JSON-formatted 404 status code response
+    a handler for 404 errors that returns a JSON-formatted
+    404 status code response
     """
     return make_response(jsonify({'error': 'Not found'}), 404)
 
+
 if __name__ == "__main__":
-   app.run(host=host, port=port)
+    app.run(host=host, port=port)
